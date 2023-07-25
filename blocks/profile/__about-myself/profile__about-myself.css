@@ -1,0 +1,17 @@
+.profile__about-myself{
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 12px;
+    color:  #FFFFFF;
+    grid-column: 1;
+}
+@media screen and (max-width: 767px) {
+    .profile__about-myself {
+    font-size: 14px;
+    line-height: 17px;
+    grid-column: 1 /span 2;
+    display: flex;
+    justify-content: center;
+    }
+}
