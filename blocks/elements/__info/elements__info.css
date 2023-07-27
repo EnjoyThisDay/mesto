@@ -1,6 +1,6 @@
 .elements__info{
     display: grid;
     grid-auto-flow: column;
-    padding: 25px 15px 31px 21px;
+    padding: 23px 15px 31px 21px;
     margin: 0;
 }
