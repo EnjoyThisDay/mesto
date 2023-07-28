@@ -5,6 +5,7 @@
     row-gap: 16px;
     column-gap: 18px;
     padding-left: 30px;
+    max-width: 336px;
 }
 @media screen and (max-width: 767px) {
     .profile__info {

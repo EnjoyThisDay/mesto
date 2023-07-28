@@ -2,13 +2,13 @@
     max-width: 430px;
     display: flex;
     flex-direction: column;
-    padding: 34px 36px 37px;
+    padding: 24px 36px 37px;
     box-sizing: border-box;
 
 }
 @media screen and (max-width: 520px) {
     .popup__form{
         width: 282px;
-        padding: 25px 22px;
+        padding: 45px 22px 25px;;
     }
 }

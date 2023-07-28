@@ -10,6 +10,8 @@ const editForm = document.querySelector('.popup__form');
 
 openPopupButton.addEventListener('click',function(){
     OpenPopup(editPopup);
+    nameInput.value = profileName.textContent;
+    statusInput.value = profileAboutMyself.textContent;
 });
     
 
@@ -17,17 +19,12 @@ closePopupButton.addEventListener('click', function(){
     ClosePopup(editPopup);
 });
 
-openPopupButton.addEventListener('click',function(){
-nameInput.value = profileName.textContent;
-statusInput.value = profileAboutMyself.textContent;
-});
-
 function OpenPopup(popup){
-    popup.classList.add('popup_open');
+    popup.classList.add('popup_opened');
 }
 
 function ClosePopup(popup){
-    popup.classList.remove('popup_open');
+    popup.classList.remove('popup_opened');
 }
 
 editForm.addEventListener('submit', function(event){
