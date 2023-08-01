@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>"Место"</title>
   <link rel="stylesheet" href="./pages/index.css">
+  <script src="./scripts/cards.js" defer></script>
   <script src="./scripts/index.js" defer></script>
 </head>
 <body>
@@ -28,7 +29,7 @@
         <footer class="footer">
             <p class="footer__copyright">© 2020 Mesto Russia</p>
         </footer>
-        <div id="edit__popup" class="popup">
+        <div class="popup popup_type_profile">
             <div class="popup__container">
                 <h2 class="popup__name">Редактировать профиль</h2>
                 <form name="form" id="edit__popup-form" class="popup__form">
@@ -39,7 +40,7 @@
                 <button type="button" id="edit__popup-close-button" class="popup__close-button"></button>
             </div>
         </div>
-        <div id="add__popup" class="popup">
+        <div class="popup popup_type_card-add">
             <div class="popup__container">
                 <h2 class="popup__name">Новое место</h2>
                 <form name="form"  id="add__popup-form" class="popup__form">
@@ -50,7 +51,7 @@
                 <button type="button" id="add__popup-close-button" class="popup__close-button"></button>
             </div>
         </div>
-        <div id="pic__popup" class="popup">
+        <div class="popup popup_type_picture">
             <div class="popup__photo-block">
             <img alt="фото" class="popup__photo">
             <h2 class="popup__photo-name"></h2>
