@@ -1,11 +1,11 @@
 .elements{
     padding-top: 50px;
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: minmax(auto, 282px) minmax(auto, 282px) minmax(auto, 282px);
     column-gap: 17px;
     row-gap: 19px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .elements{
         grid-template-columns: auto auto;
         padding-top: 36px;
