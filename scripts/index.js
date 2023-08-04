@@ -1,15 +1,7 @@
-const validationConfig = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__button',
-    disabledButtonClass: 'popup__button_disabled',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__input-error_visible'
-  };
 
-const openPopupButton = document.querySelector('.profile__edit-button');
+const openEditPopupButton = document.querySelector('.profile__edit-button');
 const editPopup = document.querySelector('.popup_type_profile');
-const closePopupButton = document.querySelector('#edit__popup-close-button');
+const closeEditPopupButton = document.querySelector('#edit__popup-close-button');
 const nameInput = document.querySelector('#name-input');
 const statusInput = document.querySelector('#status-input');
 const profileName = document.querySelector('.profile__name');
@@ -32,24 +24,21 @@ const placeInput = document.querySelector('#place-input');
 const linkInput = document.querySelector('#link-input');
 const closePhotoPopupButton = document.querySelector('#photo__popup-close-button');
 
-function closePopupEsc(evt){
-    const popup = document.querySelector('.popup_opened')
-    evt.target = window;
+function closePopupByEsc(evt){
     if (evt.key === 'Escape') {
+        const popup = document.querySelector('.popup_opened')
         closePopup(popup);  
-        console.log(popup);
     }
 };
 
-function closePopupOverlay(evt){
-    const popup = evt.target;
+function closePopupByOverlay(evt){
+    const popup = evt.currentTarget;
     if (evt.target === popup) {
         closePopup(popup);
-        console.log(popup);
     }
 };
 
-openPopupButton.addEventListener('click',function(){
+openEditPopupButton.addEventListener('click',function(){
     openPopup(editPopup);
     nameInput.value = profileName.textContent;
     statusInput.value = profileAboutMyself.textContent;
@@ -58,20 +47,20 @@ openPopupButton.addEventListener('click',function(){
     hideInputError(editForm, statusInput, validationConfig);
 });
     
-closePopupButton.addEventListener('click', function(){
+closeEditPopupButton.addEventListener('click', function(){
     closePopup(editPopup);
 });
 
 function openPopup(popup){
     popup.classList.add('popup_opened');
-    window.addEventListener('keydown', closePopupEsc);
-    popup.addEventListener('click',  closePopupOverlay);
+    window.addEventListener('keydown', closePopupByEsc);
+    popup.addEventListener('click',  closePopupByOverlay);
 };
 
 function closePopup(popup){
     popup.classList.remove('popup_opened');
-    window.removeEventListener('keydown', closePopupEsc);
-    popup.removeEventListener('click', closePopupOverlay);
+    window.removeEventListener('keydown', closePopupByEsc);
+    popup.removeEventListener('click', closePopupByOverlay);
 };
 
 editForm.addEventListener('submit', function(event){
