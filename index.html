@@ -6,8 +6,7 @@
   <title>"Место"</title>
   <link rel="stylesheet" href="./pages/index.css">
   <script src="./scripts/constants.js" defer></script>
-  <script src="./scripts/validate.js" defer></script>
-  <script src="./scripts/index.js" defer></script>
+  <script type="module" src="./scripts/index.js" defer></script>
 </head>
 <body>
     <div class="page">
@@ -50,7 +49,7 @@
         <div class="popup popup_type_card-add">
             <div class="popup__container">
                 <h2 class="popup__name">Новое место</h2>
-                <form name="form"  id="add__popup-form" class="popup__form" novalidate>
+                <form name="form"  id="add__popup-form" class="popup__form"  novalidate>
                     <label class="popup__label">
                         <input name="name" placeholder="Название" id="place-input" type="text" class="popup__input" minlength="2" maxlength="30" required/>
                         <span class="place-input-error popup__input-error"></span>
