@@ -1,15 +1,15 @@
-import {openPopup} from "./index.js";
+import {handleOpenPopup} from "./index.js";
 
 class Card {
-    constructor(data) {
+    constructor(data, templateSelector) {
       this._name = data.name;
       this._link = data.link;
-      
+      this._templateSelector = templateSelector;
     }
     
     _getTemplate() {
       const cardTemplate = document
-        .querySelector('#template__elements')
+        .querySelector(this._templateSelector)
         .content.querySelector('.elements__element')
         .cloneNode(true);
         
@@ -24,6 +24,7 @@ class Card {
 
     _setPic() {
       this._cardPic.src = this._link;
+      this._cardPic.alt = `${this._name}`
     }
   
     _handleDeleteCard() {
@@ -35,14 +36,7 @@ class Card {
       this._cardLike.classList.toggle('elements__like-button_active');
     }
 
-    _openFullPic() {
-      const picPopup = document.querySelector('.popup_type_picture'); 
-      const picPopupPhoto = document.querySelector('.popup__photo'); 
-      const picPopupName = document.querySelector('.popup__photo-name');
-      openPopup(picPopup); 
-      picPopupPhoto.src = this._link; 
-      picPopupName.textContent = this._name; 
-    }
+    
   
     _setListeners() {
 
@@ -50,7 +44,7 @@ class Card {
       deleteButton.addEventListener('click', () => {this._handleDeleteCard() });
     
       this._cardLike.addEventListener('click', () => { this._handleLikeCard() } );
-      this._cardPic.addEventListener('click', () => { this._openFullPic() } );
+      this._cardPic.addEventListener('click', () => { handleOpenPopup(this._name, this._link) } );
     }
   
     getView() {
