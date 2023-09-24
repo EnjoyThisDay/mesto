@@ -1,13 +1,13 @@
-import './pages/index.css';
+import './index.css';
 
-import Card from "./scripts/Card.js";
-import FormValidator from "./scripts/FormValidator.js";
-import {validationConfig} from "./scripts/constants.js";
-import {initialCards} from "./scripts/constants.js";
-import PopupWithImage from "./scripts/PopupWithImage.js";
-import Section from "./scripts/Section.js";
-import PopupWithForm from "./scripts/PopupWithForm.js";
-import UserInfo from "./scripts/UserInfo.js";
+import Card from "../components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+import {validationConfig} from "../utils/constants.js";
+import {initialCards} from "../utils/constants.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import Section from "../components/Section.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import UserInfo from "../components/UserInfo.js";
 
 const openEditPopupButton = document.querySelector('.profile__edit-button');
 const editPopup = document.querySelector('.popup_type_profile');
@@ -59,10 +59,11 @@ openEditPopupButton.addEventListener('click',function(){
 
 });
 
+const cardPopup = new PopupWithImage(picPopup);
+        cardPopup.setEventListeners();
+
 function createCard(data){
     const card = new Card(data, '#template__elements', () => {
-        const cardPopup = new PopupWithImage(picPopup);
-        cardPopup.setEventListeners();
         cardPopup.open(data);
     });
     const cardTemplate = card.getView();
